@@ -1,5 +1,6 @@
 import speech_recognition as sr
-filename = "1.wav"
+import sys
+filename = sys.argv[1] 
 r = sr.Recognizer()
 with sr.AudioFile(filename) as source:
     # listen for the data (load audio to memory)
