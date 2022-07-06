@@ -2,10 +2,10 @@ import wave
 from string import Template
 
 # times between which to extract the wave from
-start = 120 # seconds
-end = 137 # seconds
+start = 0 # seconds
+end = 180 # seconds
 # file to extract the snippet from
-with wave.open('/home/rahma/speech_files/whole.wav', "rb") as infile:
+with wave.open('/home/rahma/Downloads/SS149_Kassywedding.wav', "rb") as infile:
     # get file data
     nchannels = infile.getnchannels()
     sampwidth = infile.getsampwidth()
@@ -16,7 +16,7 @@ with wave.open('/home/rahma/speech_files/whole.wav', "rb") as infile:
     data = infile.readframes(int((end - start) * framerate))
 
 # write the extracted data to a new file
-with wave.open('/home/rahma/speech_files/speaker1_voice.wav', 'w') as outfile:
+with wave.open('/home/rahma/speech_files/voice.wav', 'w') as outfile:
     outfile.setnchannels(nchannels)
     outfile.setsampwidth(sampwidth)
     outfile.setframerate(framerate)
