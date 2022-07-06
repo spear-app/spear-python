@@ -16,10 +16,7 @@ with wave.open('/home/rahma/Downloads/SS149_Kassywedding.wav', "rb") as infile:
     data = infile.readframes(int((end - start) * framerate))
 
 # write the extracted data to a new file
-st = str(file_num)
-new = Template('/home/rahma/speech_files/whole.wav')
-path_ = str(new.substitute(st= st))
-with wave.open(path_, 'w') as outfile:
+with wave.open('/home/rahma/speech_files/whole.wav', 'w') as outfile:
     outfile.setnchannels(nchannels)
     outfile.setsampwidth(sampwidth)
     outfile.setframerate(framerate)
