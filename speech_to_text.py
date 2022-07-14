@@ -7,7 +7,8 @@ with sr.AudioFile(filename) as source:
     audio_data = r.record(source)
     # recognize (convert from speech to text)
     try:
-        text = r.recognize_google(audio_data)
+	    #lang = sys.argv[2]
+        text = r.recognize_google(audio_data, language=sys.argv[2])
         print(text)
     except: 
         print("Error:", str(sr.UnknownValueError ))
